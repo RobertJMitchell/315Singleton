@@ -61,5 +61,15 @@ namespace _315Singleton
             return nt.Id;
         }
 
+        //UPDATE - Update Specific ToDo Item
+        public void UpdateToDo(int id, string task, bool isCompleted)
+        {
+            Todo uTodo = _todos.FirstOrDefault(t => t.Id == id);
+            if (uTodo == null)
+            { 
+                return
+            };
+                uTodo.Task = task;
+        }
     }
 }
